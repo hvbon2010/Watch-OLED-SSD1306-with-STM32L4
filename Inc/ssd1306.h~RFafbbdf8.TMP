@@ -1,0 +1,36 @@
+/*----------------------------------------------------*-
+	SSD1306 OLED 0.96 Inch
+	Author: Bon Van Ho
+	Date:		2/7/2018
+-*----------------------------------------------------*/
+
+#ifndef SSD1306_H
+#define SSD1306_H
+
+#define SSD1306_ADDRESS		0x78
+
+typedef struct{
+	uint8_t Row;
+	uint8_t Column;
+	bool 		Light;
+} Pixel;
+
+void SSD1306WriteCommand(uint8_t *Data, uint8_t Len);
+
+void SSD1306WriteData(uint8_t *Data, uint8_t Len);
+
+void SSD1306Init(void);
+	
+void SSD1306SelectContrast(uint8_t Contrast);
+
+void SSD1306DisplayOff(void);
+
+void SSD1306DisplayOn(void);
+
+void SSD1306SetPixel(Pixel SSD1306Pixel);
+
+void SSD1306OverPixel(void);
+
+void SSD1306DisplayNumber(uint8_t num);
+
+#endif
